@@ -1,0 +1,44 @@
+.header {
+  height: 120px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  .title {
+    cursor: pointer;
+    position: relative;
+    padding: 15px 61px;
+    .EMR_title {
+      position: absolute;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 72px;
+      color: #30a16a;
+    }
+    .EMR_hospital {
+      width: 243px;
+      position: absolute;
+      top: 75.5px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22px;
+      color: #30a16a;
+    }
+  }
+  .menu_bar {
+    display: flex;
+    .option {
+      cursor: pointer;
+      padding: 40px 50px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      color: #000000;
+    }
+  }
+}
