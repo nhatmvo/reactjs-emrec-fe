@@ -1,0 +1,54 @@
+.entry-summary {
+    width: 800px;
+    height: 110px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.entry-diagnostic {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 45px;
+}
+
+.entry-diagnostic__label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #828282;
+    margin: 4px 0px;
+}
+
+.entry-diagnostic__name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.entry-picture-date {
+    display: flex;
+    margin: 0px 55px;
+}
+
+.entry-picture {
+    display: inherit;
+    margin: 0px 40px;
+}
+
+.entry-picture__image {
+    width: 24px;
+    height: 24px;
+}
+
+.entry-picture__quantity {
+    font-size: 20px;
+    margin: 0px 8px;
+}
+
+.entry-date {
+    margin: auto;
+}
+
+

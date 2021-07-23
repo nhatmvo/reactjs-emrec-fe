@@ -1,5 +1,8 @@
 import './App.css';
 import PatientSearchResults from './components/Patient/PatientSearchResults';
+import PatientInformationCard from './components/Patient/PatientInformationCard'
+import EntrySummaryCard from './components/Entry/EntrySummaryCard'
+
 
 function App() {
   const mockData = [
@@ -28,7 +31,7 @@ function App() {
 
   return (
     <div>
-      <PatientSearchResults results={mockData} />
+      <EntrySummaryCard />
     </div>
   );
 }
