@@ -9,7 +9,7 @@ const EMRInput = (props) => {
   }, [props]);
   //   console.log("info: ", info);
   return (
-    <div className="main">
+    <div className="main-input">
       <div className="title">
         {state.title}
         <div className="required" hidden={!state.required}>
@@ -43,11 +43,18 @@ const EMRInput = (props) => {
           </div>
         ) : null}
         {state.type == 6 ? (
-          <div>
-            <label for="radio">Radio 1</label>
-            <input type="radio" name="radio" value="30" id="radio" />
-            <label for="radio2">Radio 2</label>
-            <input type="radio" name="radio" value="60" id="radio2" />
+          <div className="radio-combo">
+            {state.lstRadio.map((radio) => (
+              <div className="radio">
+                <label for="radio">{radio.name}</label>
+                <input
+                  type="radio"
+                  name="radio"
+                  id="radio"
+                  value={radio.value}
+                />
+              </div>
+            ))}
           </div>
         ) : null}
         {state.type == "error" ? (

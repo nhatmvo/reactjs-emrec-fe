@@ -1,17 +1,15 @@
-.main {
+.main-input {
   display: flex;
+  flex-direction: row;
   width: 100%;
   .title {
     position: relative;
-    width: 100px;
-    padding-top: 7px;
+    min-width: 100px;
     display: flex;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 64px;
     .required {
-      margin-left: 4px;
       font-size: 18px;
-      line-height: 22px;
       color: #eb5757;
     }
   }
@@ -19,6 +17,7 @@
     width: 100%;
     box-sizing: border-box;
     background: #ffffff;
+    margin-right: 50px;
     .input_text_area {
       border-radius: 12px;
       height: 120px;
@@ -32,7 +31,7 @@
     .input_text {
       border-radius: 12px;
       border: 1px solid #bdbdbd;
-      padding: 20px 0;
+      padding: 20px 10px;
       width: 100%;
       font-size: 18px;
       line-height: 22px;
@@ -56,6 +55,14 @@
           line-height: 22px;
           text-align: start;
         }
+      }
+    }
+    .radio-combo {
+      display: flex;
+      flex-direction: row;
+      line-height: 64px;
+      .radio {
+        margin-right: 35px;
       }
     }
     .error {

@@ -1,20 +1,23 @@
 import PatientSearchResultCard from "./PatientSearchResultCard";
-import  "./PatientSearchResults.scss";
+import "./PatientSearchResults.scss";
 
 const PatientSearchResults = (props) => {
-    const patientSearchResults = props.results;
+  const patientSearchResults = props.results;
 
-    return (
-        <div className="results-wrapper">
-            { patientSearchResults.map(p => <PatientSearchResultCard
-                className="card"
-                name={p.name} 
-                dob={p.dateOfBirth} 
-                phoneNumber={p.phoneNumber} 
-                mostReccentExaminationDate={p.mostReccentExaminationDate}
-                numberOfEntries={p.numberOfEntries}/>) }
-        </div>
-    )
-}
+  return (
+    <div className="results-wrapper">
+      {patientSearchResults.map((p) => (
+        <PatientSearchResultCard
+          className="card"
+          name={p.patientName}
+          dob={p.patientDob}
+          phoneNumber={p.patientPhoneNo}
+          mostReccentExaminationDate={p.patientLastCheckUp}
+          numberOfEntries={p.patientNoEntries}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default PatientSearchResults;

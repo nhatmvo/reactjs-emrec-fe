@@ -47,19 +47,21 @@
 }
 
 .section-title {
+  width: 100%;
+  display: flex;
   margin-right: 10px;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
   text-transform: uppercase;
   color: #bdbdbd;
+  margin: 50px 0;
 }
 hr {
-  margin-top: 19px;
-  margin-right: 20px;
   border: none;
   border-top: 1px solid #bdbdbd;
-  width: 100%;
+  display: inline-block;
+  width: 85%;
 }
 
 .category-title {

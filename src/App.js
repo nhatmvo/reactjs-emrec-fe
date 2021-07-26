@@ -4,13 +4,15 @@ import EMRSearchBox from "./components/EMRSearchBox/EMRSearchBox";
 import { useState } from "react";
 import EMRInput from "./components/EMRInput/EMRInput";
 import "./components/common/common.scss";
+import SearchScreen from "./container/screen/SearchScreen/SearchScreen";
 
 function App() {
   return (
     <div>
       <EMRHeader />
-      <EMRSearchBox />
-      <div className="emr-form" style={{ margin: "0px 50px 50px" }}>
+      <SearchScreen />
+      {/* <EMRSearchBox /> */}
+      {/* <div className="emr-form" style={{ margin: "0px 50px 50px" }}>
         <div className="form-header">Header</div>
         <div className="row">
           <div className="section-title">Section title</div>
@@ -62,6 +64,7 @@ function App() {
           </button>
         </div>
       </div>
+     */}
     </div>
   );
 }
