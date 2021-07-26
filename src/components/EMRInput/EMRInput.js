@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./emrInput.scss";
 import "../common/common.scss";
-import EMRButton from "./EMRButton";
 
 const EMRInput = (props) => {
   const [state, setState] = useState(props);
@@ -32,7 +31,9 @@ const EMRInput = (props) => {
         {state.type == 5 ? (
           <div className="img-chosen">
             <div className="input">
-              <EMRButton btnName="Chọn ảnh" width="146px" />
+              <button className="button-layout" style={{ width: "146px" }}>
+                Chọn ảnh
+              </button>
               <input
                 className="input_text_img"
                 placeholder="Chọn ảnh"

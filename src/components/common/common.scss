@@ -75,3 +75,21 @@ input::placeholder {
 textarea::placeholder {
   padding-left: 20px;
 }
+
+.button-layout {
+  cursor: pointer;
+  height: 48px;
+  background: #30a16a;
+  border-radius: 8px;
+  border: none;
+  justify-content: center;
+  line-height: 48px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  .icon {
+    margin-right: 13px;
+    color: #ffffff;
+  }
+}

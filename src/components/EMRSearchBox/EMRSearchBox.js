@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./emrSearchBox.scss";
-import EMRButton from "../EMRInput/EMRButton";
 
 function EMRSearchBox() {
   const [icon, setIcon] = useState(true);
@@ -54,7 +53,14 @@ function EMRSearchBox() {
                 onClick={onDeleteSearch}
               />
             </div>
-            <EMRButton btnName="Tìm kiếm" width="100%" onClick={onSearch} />
+
+            <button
+              className="button-layout"
+              style={{ width: "100%" }}
+              onClick={onSearch}
+            >
+              Tìm kiếm
+            </button>
           </div>
         </div>
       </div>
