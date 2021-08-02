@@ -1,0 +1,50 @@
+::placeholder { 
+    color: #BDBDBD;
+    opacity: 1;
+    font-size: 18px;
+  }
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.875rem 0rem;
+    width: 50rem;
+    height: 3.75rem;
+
+    span {
+        font-size: 18px;
+        color: #EB5757;
+    }
+
+    label {
+        font-size: 14px;
+        color: #000000;
+    }
+
+    input {
+        border-radius: 12px;
+        background: #FFFFFF;
+        border: 1px solid #BDBDBD;
+        outline: none;
+        font-size: 18px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+.mui-datepicker {
+    >:first-child {
+        border: 1px solid #BDBDBD;
+        width: 260px;
+        height: 60px;
+        border-radius: 12px;
+        outline: none;
+        >input {
+            border: none !important;
+            outline: none;
+            height: auto !important;
+        }
+    }
+}

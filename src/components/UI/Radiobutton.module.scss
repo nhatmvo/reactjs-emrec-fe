@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    >div:nth-child(2n+1) {
+        margin: auto;
+    }
+
+    .radio {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        >label {
+            margin: 1rem;
+            font-size: 14px;
+        }
+
+        >input {
+            height: 24px !important;
+            width: 24px !important;
+        }
+    }
+
+    >label {
+        font-size: 14px;
+        color: #000000;
+    }
+
+    span {
+        font-size: 18px;
+        color: #EB5757;
+    }
+}
+

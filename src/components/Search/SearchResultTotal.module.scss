@@ -1,0 +1,11 @@
+.main {
+    text-align: center;
+    font-size: 18px;
+    color: #828282;
+    line-height: 22px;
+    margin: 2.5rem;
+    > span {
+        color: #333333;
+        font-weight: 600;
+    }
+}

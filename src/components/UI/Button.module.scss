@@ -1,0 +1,27 @@
+:root {
+    --blue: #4628ff;
+    --green: #30A16A;
+    --white: #FFFFFF;
+}
+
+.btn {
+    font-size: 1.125rem;
+    line-height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn--green--solid {
+    background-color: var(--green);
+    color: white;
+}
+
+.btn--white--solid {
+    background-color: var(--white);
+    color: #6559B8;
+
+}

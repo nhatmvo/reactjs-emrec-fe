@@ -1,0 +1,19 @@
+.bar {
+    margin: 0 auto;
+    background: rgba(247, 246, 254, 0.8);
+    border-radius: 16px;
+    height: 60px;
+    width: 700px;
+    line-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #828282;
+    margin-bottom: 40px;
+    .link {
+      font-weight: 600;
+      text-decoration-line: underline;
+      color: #30A16A;
+    }
+}

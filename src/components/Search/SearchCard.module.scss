@@ -1,0 +1,87 @@
+.card {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    width: 385px;
+    height: 200px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+
+    .avatar {
+        height: 6.25rem;
+        width: 6.25rem;
+        margin: 1.25rem;
+    }
+
+    .information>div {
+        font-size: 14px;
+    }
+
+    .information {
+        .name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .lastest-date {
+            margin: 5px 0px;
+            font-style: italic;
+            font-size: 14px;
+            color: lightslategrey
+        }
+    }
+
+    .entries {
+        display: flex;
+        align-items: center;
+
+        >div {
+            border-radius: 5px;
+            background-color: #F2F2F2;
+        }
+
+        .entry_previous {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            width: 68px;
+
+            img {
+                width: 18px;
+                height: 18px;
+                margin-right: 4px;
+            }
+
+            >.quantity {
+                margin-left: 4px;
+                color: #828282;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+
+        .entry-add {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 36px;
+            width: 46px;
+            margin: 0px 5px;
+
+            >.plus {
+                height: 14px;
+                width: 14px;
+            }
+        }
+    }
+}
+
+.card:nth-child(2n + 1) {
+    justify-self: end;
+}
+
+.card:nth-child(2n) {
+    justify-self: start;
+}

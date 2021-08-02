@@ -1,0 +1,64 @@
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    background: #F7F6FE;
+    border-radius: 16px;
+    width: 800px;
+    height: 160px;
+    justify-content: space-between;
+
+    > .information-wrapper {
+        display: flex;
+        > .avatar {
+            display: flex;
+            align-items: center;
+            > img {
+                margin: 34px 46px;
+                width: 92px;
+                height: 92px;
+            }
+        }
+
+        > .information {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0px 10px;
+
+            > .name {
+                font-size: 20px;
+                font-weight: bold;
+                margin: 5px 0px;
+            }
+        }
+
+        div {
+            font-size: 14px;
+            margin: 5px 0px;
+        }
+    }
+
+    > .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 25px;
+
+        .button {
+            font-weight: 600;
+            width: 173px;
+            height: 46px;
+            margin: 6px;
+            > img {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
+
+
