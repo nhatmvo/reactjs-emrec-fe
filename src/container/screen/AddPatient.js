@@ -21,6 +21,20 @@ const AddPatient = () => {
         }
     ]
 
+    const radioButtonGender = [
+        {
+            id: "1",
+            value: "male",
+            label: "Nam",
+            checked: true
+        },
+        {
+            id: "2",
+            value: "female",
+            label: "Nữ"
+        }
+    ]
+
     return (
         <Card headerLabel="Tạo hồ sơ bệnh nhân">
             <form className={classes.wrapper}>
@@ -32,11 +46,15 @@ const AddPatient = () => {
                         <Input isRequired={true} className={classes["col-12"]} id="1" type="text" label="Họ tên" />
                         <div className={classes["col-6"]}>
                             <Input id="2" type="date" label="Năm sinh" isRequired={true} />
+                            <Radiobutton name="gender" values={radioButtonGender} label="Giới tính" isRequired={true}/>
+                        </div>
+                        <div className={classes["col-6"]}>
+                            <Input id="4" type="text" label="CMND/CCCD" isRequired={true} />
                             <Input id="3" type="number" label="Số điện thoại" isRequired={true} />
                         </div>
-                        <Input className={classes["col-12"]} id="4" type="text" label="CMND/CCCD" isRequired={true} />
                         <Input className={classes["col-12"]} id="5" type="text" label="Địa chỉ" />
                         <Input className={classes["col-12"]} id="6" type="text" label="Email" />
+
                     </div>
                 </div>
                 <div className={classes.section}>

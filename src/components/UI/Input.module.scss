@@ -1,8 +1,8 @@
-::placeholder { 
+::placeholder {
     color: #BDBDBD;
     opacity: 1;
     font-size: 18px;
-  }
+}
 
 .control {
     display: flex;
@@ -12,14 +12,14 @@
     width: 50rem;
     height: 3.75rem;
 
-    span {
-        font-size: 18px;
-        color: #EB5757;
-    }
-
     label {
         font-size: 14px;
         color: #000000;
+
+        span {
+            font-size: 18px;
+            color: #EB5757;
+        }
     }
 
     input {
@@ -41,6 +41,7 @@
         height: 60px;
         border-radius: 12px;
         outline: none;
+
         >input {
             border: none !important;
             outline: none;
