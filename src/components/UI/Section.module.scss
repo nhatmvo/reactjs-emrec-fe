@@ -1,0 +1,23 @@
+.section {
+    margin-bottom: 2rem;
+}
+
+.label {
+    display: flex;
+    color: #BDBDBD;
+    font-size: 14px;
+    margin: 2rem 0rem;
+
+
+    >hr {
+        width: 100%;
+        margin-left: 25px;
+    }
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}

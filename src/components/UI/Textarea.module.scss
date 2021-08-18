@@ -1,0 +1,38 @@
+.control {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0.875rem 0rem;
+    width: 50rem;
+
+    >label {
+        font-size: 14px;
+        color: #000000;
+        width: 100px;
+        margin: 10px 0px;
+
+        span {
+            font-size: 18px;
+            color: #EB5757;
+        }
+    }
+
+    >textarea {
+        border-radius: 12px;
+        border: 1px solid #BDBDBD;
+        width: 660px;
+        height: 120px;
+        resize: none;
+        outline: none;
+        font-size: 18px;
+        padding: 15px;
+        font-family: Arial, Helvetica, sans-serif
+    }
+}
+
+.readonly {
+    font-size: 14px;
+    width: 660px;
+    height: auto;
+    white-space: pre-line;
+}

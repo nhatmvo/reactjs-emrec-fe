@@ -1,4 +1,4 @@
-import { forwardRef, useRef, useState, useEffect } from 'react';
+import { forwardRef, useState, useImperativeHandle, useRef, useEffect } from 'react';
 import classes from './Input.module.scss';
 import DateFnsUtils from '@date-io/date-fns';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
@@ -17,11 +17,29 @@ const Input = forwardRef((props, ref) => {
     });
 
     const inputRef = useRef();
+
     const [selectedDate, setSelectedDate] = useState(new Date());
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
+
+    const getDateValue = () => {
+        return selectedDate;
+    }
+
+    const getInputValue = () => {
+        return inputRef.current.value;
+    }
+
+    useImperativeHandle(ref, () => {
+        return {
+            getDateValue: getDateValue,
+            getInputValue: getInputValue
+        };
+    });
+
+
 
     const requiredSpan = <span>&nbsp;*&nbsp;</span>
 
@@ -53,11 +71,12 @@ const Input = forwardRef((props, ref) => {
         <div className={`${classes.control} ${props.className}`}>
             <label htmlFor={props.id}>{props.label}<span>{props.isRequired ? requiredSpan : null}</span></label>
             {isDateMUI && datepickerMUI}
-            {!isDateMUI && <input
+            {!isDateMUI && !props.readonly && <input
                 ref={inputRef}
                 type={props.type}
                 id={props.id}
-                value={props.value} />}
+                onChange={props.onChangeValue}/>}
+            {!isDateMUI && props.readonly && <p>{props.value}</p>}
         </div>
     )
 });

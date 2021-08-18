@@ -4,7 +4,7 @@ import picture from '../../assets/picture.png'
 
 const EntrySummaryCard = (props) => {
     return (
-        <div className="entry-summary">
+        <div className="entry-summary" onClick={props.onCardClick}>
             <div className="entry-diagnostic">
                 <div className="entry-diagnostic__label">CHẨN ĐOÁN BỆNH:</div>
                 <div className="entry-diagnostic__name">{props.diagnostic}</div>

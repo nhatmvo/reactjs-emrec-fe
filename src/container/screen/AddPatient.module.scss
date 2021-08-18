@@ -4,16 +4,26 @@
     flex-direction: column;
     align-items: center;
 
-    .col-12 {
+    .section {
+        margin-bottom: 2rem;
+    }
+
+    .label {
         display: flex;
-        input {
-            width: 41.25rem;
-            height: 3.75rem;
+        color: #BDBDBD;
+        font-size: 14px;
+        margin: 2rem 0rem;
+
+        >hr {
+            width: 37.5rem;
         }
     }
 
-    .section {
-        margin-bottom: 2rem;
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
     }
 
     .col-6 {
@@ -37,7 +47,7 @@
 
         >:nth-child(2n) {
             >label {
-                margin: auto;
+                margin: 25px;
             }
         }
 
@@ -49,23 +59,14 @@
         }
     }
 
-    .label {
+    .col-12 {
         display: flex;
-        color: #BDBDBD;
-        font-size: 14px;
-        margin: 2rem 0rem;
-
-        >hr {
-            width: 37.5rem;
+        input {
+            width: 41.25rem;
+            height: 3.75rem;
         }
     }
 
-    .content {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-    }
 
     .btn {
         width: 13.875rem;

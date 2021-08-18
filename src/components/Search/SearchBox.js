@@ -3,15 +3,31 @@ import classes from './SearchBox.module.scss';
 import Button from '../UI/Button'
 import searchIcon from '../../assets/search-icon.png'
 import eraseIcon from '../../assets/close-icon.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import useHttp from '../../hooks/use-http';
+import { getPatients } from '../../services/api/patient';
+
 
 const SearchBox = (props) => {
     const [searchInput, setSearchInput] = useState('');
     const history = useHistory();
+    const { sendRequest, status, data } = useHttp(getPatients)
+
+    useEffect(() => {
+        if (status === 'completed') {
+            if (data.length > 1) {
+                props.onSearch(data, searchInput);
+            } else if (data.length === 1) {
+                console.log(data[0]);
+                history.push(`/patient/${data[0].patientId}/entries`);
+            } else if (data.length === 0) {
+                history.push('/patient/add');
+            }
+        }
+    }, [status, data]);
 
     const hasInputValue = searchInput !== '';
-
 
     const onChangeHandler = (event) => {
         setSearchInput(event.target.value);
@@ -24,36 +40,8 @@ const SearchBox = (props) => {
     const onSearchBtnClickHandler = (event) => {
         event.preventDefault();
         const submitValue = searchInput;
-        // Mimic handle request
-        const data = [
-            {
-                id: 1,
-                patientName: "Võ Minh Nhật",
-                patientPhoneNo: "0123456789",
-                patientDob: "19/02/1997",
-                patientLastCheckUp: "25/07/2021",
-                patientNoEntries: "2",
-                gender: "male"
-            },
-            {
-                id: 2,
-                patientName: "Đàm Quốc Vẻ",
-                patientPhoneNo: "0987654321",
-                patientDob: "04/07/1997",
-                patientLastCheckUp: "21/04/2021",
-                patientNoEntries: "1",
-                gender: "male"
-            },
-            {
-                id: 3,
-                patientName: "Vũ Huyền Huyền",
-                patientPhoneNo: "0246813579",
-                patientDob: "18/07/2021",
-                patientLastCheckUp: "21/04/2021",
-                patientNoEntries: "12",
-                gender: "female"
-            },
-        ]
+        sendRequest(searchInput)
+        
         if (data != null && data.length == 0) {
             history.push('/patient/add');
         }

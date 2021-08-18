@@ -8,7 +8,6 @@ const predefinedStyles = [
 
 
 const Button = (props) => {
-    console.log(props.buttonStyle)
     const checkButtonStyle = predefinedStyles.includes(props.buttonStyle) ? props.buttonStyle : predefinedStyles[0];
 
     return (<button className={`${classes.btn} ${classes[checkButtonStyle]} ${props.className}`} onClick={props.onClick} type={props.type}>

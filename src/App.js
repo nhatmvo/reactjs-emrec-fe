@@ -6,6 +6,8 @@ import Search from "./container/screen/Search";
 import PatientEntries from "./container/screen/PatientEntries";
 import Layout from "./components/Layout/Layout";
 import AddPatient from "./container/screen/AddPatient";
+import AddEntry from "./container/screen/AddEntry";
+import EntryDetails from "./container/screen/EntryDetails";
 
 function App() {
   return (
@@ -17,11 +19,14 @@ function App() {
         <Route path="/patient/add">
           <AddPatient />
         </Route>
-        <Route path="/patient/:patientId/entries">
+        <Route path="/patient/:patientId/entries" exact>
           <PatientEntries />
         </Route>
-        <Route path="/patient/:patientId/entry/add">
-          
+        <Route path="/patient/:patientId/entries/add" exact>
+          <AddEntry  />
+        </Route>
+        <Route path="/patient/:patientId/entries/:entryId/details" exact>
+          <EntryDetails />
         </Route>
         <Route path="/history">
 

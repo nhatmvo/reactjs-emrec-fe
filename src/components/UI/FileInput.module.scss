@@ -1,0 +1,66 @@
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.875rem 0rem;
+    width: 50rem;
+
+    label {
+        font-size: 14px;
+        color: #000000;
+        width: 100px;
+
+        span {
+            font-size: 18px;
+            color: #EB5757;
+        }
+    }
+
+    .file-box {
+        display: flex;
+        align-items: center;
+        border-radius: 12px;
+        background: #FFFFFF;
+        border: 1px solid #BDBDBD;
+        outline: none;
+        font-size: 18px;
+        width: 41.25rem;
+        height: 3.75rem;
+
+
+        >button {
+            width: 146px;
+            height: 40px;
+            background: #F2F2F2;
+            border-radius: 8px;
+            margin: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        >input {
+            display: none;
+        }
+    }
+
+    .readonly {
+        height: auto;
+        width: 660px;
+        display: flex;
+
+        img {
+            width: 120px;
+            height: 120px;
+            margin-right: 6px;
+        }
+
+        span {
+            font-size: 14px;
+            font-style: italic;
+        }
+
+    }
+}
