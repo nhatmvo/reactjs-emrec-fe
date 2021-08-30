@@ -44,7 +44,7 @@ const FileInput = (props) => {
     }
 
     return (<div className={classes.control}>
-        <label>{props.label}</label>
+        <label htmlFor={props.id}>{props.label}</label>
         {!props.readonly && <div className={`${classes["file-box"]} ${classes.className}`}>
             <button type="button" onClick={onButtonClick}>Chọn hình ảnh</button>
             <input type='file' id={props.id} ref={inputRef} onChange={handleOnInputChange} multiple />

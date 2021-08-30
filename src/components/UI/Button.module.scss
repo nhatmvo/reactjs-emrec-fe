@@ -2,6 +2,7 @@
     --blue: #4628ff;
     --green: #30A16A;
     --white: #FFFFFF;
+    --green-hover: #64CB99;
 }
 
 .btn {
@@ -18,6 +19,10 @@
 .btn--green--solid {
     background-color: var(--green);
     color: white;
+}
+
+.btn--green--solid:hover {
+    background-color: var(--green-hover);
 }
 
 .btn--white--solid {

@@ -43,3 +43,35 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    .instruction {
+        margin: 0px 12px;
+    }
+    
+    .search-box {
+        width: 22rem !important;
+        margin: 12px;
+    }
+
+    .search-text {
+        border: none;
+        background: none;
+        outline: none;
+        padding: 1.5rem;
+        font-size: 1.125rem;
+        width: 100%;
+    }
+
+    .search-button {
+        width: 22rem;
+        height: 48px;
+        margin: 12px;
+    }
+
+    .search-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 10px;
+    }
+}

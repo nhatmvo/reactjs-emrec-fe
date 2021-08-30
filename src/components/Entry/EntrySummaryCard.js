@@ -1,5 +1,4 @@
 import './EntrySummaryCard.scss';
-import classes from './EntrySummaryCard';
 import picture from '../../assets/picture.png'
 
 const EntrySummaryCard = (props) => {
@@ -11,7 +10,7 @@ const EntrySummaryCard = (props) => {
             </div>
             <div className="entry-picture-date">
                 <div className="entry-picture">
-                    <img className="entry-picture__image" src={picture} />
+                    <img className="entry-picture__image" src={picture} alt="small-ico"/>
                     <div className="entry-picture__quantity">{props.entryTotalPictures}</div>
                 </div>
                 <div className="entry-date">{props.entryDate}</div>

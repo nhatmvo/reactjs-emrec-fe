@@ -25,17 +25,21 @@
         padding: 30px 100px 50px 100px;
     }
 
+    >a {
+        text-decoration: none;
+        color: #331FBD !important;
+    }
+    
+
 }
 
 .prior {
     margin-left: 50px;
+    width: auto;
 }
 
 .succedding {
     margin-right: 50px;
+    width: auto;
 }
 
-a {
-    text-decoration: none;
-    color: #331FBD;
-}

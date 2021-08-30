@@ -1,0 +1,29 @@
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    margin: 20px 16px;
+    padding: 16px;
+
+    .name {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000000;
+    }
+
+    .lasting {
+        font-size: 14px;
+        line-height: 17px;
+        color: #828282;
+        font-style: italic;
+    }
+
+    .label {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+}

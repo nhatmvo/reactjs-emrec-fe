@@ -1,0 +1,37 @@
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    margin: 20px 16px;
+    padding: 16px;
+
+    .entry-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        >img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .entry-name {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000000;
+    }
+
+    .entry-last {
+        margin-bottom: 24px;
+        font-size: 14px;
+        line-height: 17px;
+        color: #828282;
+        font-style: italic;
+    }
+
+    .missing-entry-no {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

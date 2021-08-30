@@ -2,10 +2,9 @@ import classes from './AddEntry.module.scss';
 import useHttp from '../../hooks/use-http';
 import { getTemplate } from '../../services/api/template'
 import { getPatientById } from '../../services/api/patient'
-
+import moment from 'moment';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import useWhyDidYouUpdate from '../../hooks/rereder-check';
 import Section from '../../components/UI/Section'
 import Textarea from '../../components/UI/Textarea'
 import Header from '../../components/UI/Header';
@@ -16,6 +15,7 @@ import InformationCard from '../../components/Patient/InformationCard';
 import FileInput from '../../components/UI/FileInput';
 import { submitForm } from '../../services/api/document';
 import { useHistory } from 'react-router-dom';
+import LoadingSpinner from '../../components/UI/LoadingSpinner';
 
 const AddEntry = () => {
     const [formData, setFormData] = useState([]);
@@ -48,9 +48,7 @@ const AddEntry = () => {
 
 
     if (getPatientStatus === 'pending' || getTemplateStatus === 'pending') {
-        return (<div>
-            Loading...
-        </div>)
+        return <LoadingSpinner />
     }
 
     const onFormSubmission = async (event) => {
@@ -121,7 +119,7 @@ const AddEntry = () => {
         <div className={classes.wrapper}>
             <InformationCard className={classes.card}
                 name={patientData.name}
-                yearOfBirth={patientData.yearOfBirth}
+                yearOfBirth={moment(patientData.dateOfBirth).format("yyyy")}
                 phoneNumber={patientData.phoneNumber}
                 gender={patientData.gender} />
             <Card headerLabel="Lượt khám mới">

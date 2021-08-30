@@ -16,6 +16,7 @@ import Card from '../../components/UI/Card';
 import Button from '../../components/UI/Button';
 import InformationCard from '../../components/Patient/InformationCard';
 import FileInput from '../../components/UI/FileInput';
+import LoadingSpinner from '../../components/UI/LoadingSpinner';
 
 const EntryDetails = () => {
     const { sendRequest: sendGetPatientRequest, status: getPatientStatus, data: patientData  } = useHttp(getPatientById, true);
@@ -31,9 +32,7 @@ const EntryDetails = () => {
     }, [sendGetPatientRequest, sendGetTemplateRequest, patientId]);
 
     if (getPatientStatus === 'pending' || getTemplateStatus === 'pending' || getEntryDataStatus === 'pending') {
-        return (<div>
-            Loading...
-        </div>)
+        return <LoadingSpinner />
     }
 
     const populateForm = (elements, elementValues) => {
@@ -78,7 +77,7 @@ const EntryDetails = () => {
         <div className={classes.wrapper}>
             <InformationCard className={classes.card}
                 name={patientData.name}
-                yearOfBirth={patientData.yearOfBirth}
+                yearOfBirth={moment(patientData.dateOfBirth).format("yyyy")}
                 phoneNumber={patientData.phoneNumber}
                 gender={patientData.gender} />
             <Card headerLabel={moment(entryData.entryDate).format("DD/MM/yyyy")} priorEntry={entryData.priorDocumentEntry} succeedingEntry={entryData.succeedingDocumentEntry}>

@@ -6,30 +6,43 @@ import eraseIcon from '../../assets/close-icon.png';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import useHttp from '../../hooks/use-http';
-import { getPatients } from '../../services/api/patient';
+import { getPatientByFilterMobile, getPatients } from '../../services/api/patient';
+import { BrowserView, isMobile, MobileView } from 'react-device-detect';
+import LoadingSpinner from '../UI/LoadingSpinner';
 
 
 const SearchBox = (props) => {
     const [searchInput, setSearchInput] = useState('');
     const history = useHistory();
     const { sendRequest, status, data } = useHttp(getPatients)
+    const { sendRequest: getPatientForMobileRequest, status: patientForMobileStatus, data: patientMobileData } = useHttp(getPatientByFilterMobile);
 
     useEffect(() => {
-        if (status === 'completed') {
-            if (data.length > 1) {
-                props.onSearch(data, searchInput);
-            } else if (data.length === 1) {
-                console.log(data[0]);
-                history.push(`/patient/${data[0].patientId}/entries`);
-            } else if (data.length === 0) {
-                history.push('/patient/add');
+        if (!isMobile) {
+            if (status === 'completed') {
+                if (data.length > 1) {
+                    props.onSearch(data, searchInput);
+                } else if (data.length === 1) {
+                    history.push(`/patient/${data[0].patientId}/entries`);
+                } else if (data.length === 0) {
+                    history.push('/patient/add');
+                }
+            }
+        } else {
+            if (patientForMobileStatus === 'completed') {
+                history.push(`/patient/${patientMobileData.patientId}/entries/${patientMobileData.latestEntryId}/quick-access`);
             }
         }
-    }, [status, data]);
+        
+    }, [status, data, isMobile, patientForMobileStatus]);
 
     const hasInputValue = searchInput !== '';
 
-    const onChangeHandler = (event) => {
+    if (status === 'pending') {
+        return <LoadingSpinner />;
+    }
+
+    const handleInputChange = (event) => {
         setSearchInput(event.target.value);
     }
 
@@ -37,15 +50,24 @@ const SearchBox = (props) => {
         setSearchInput('');
     }
 
-    const onSearchBtnClickHandler = (event) => {
-        event.preventDefault();
+    const handleSearchBtnOnMobile = () => {
+        const submitValue = searchInput;
+        getPatientForMobileRequest(submitValue);
+    } 
+
+    const handleSearchBtnOnDesktop = () => {
         const submitValue = searchInput;
         sendRequest(searchInput)
-        
-        if (data != null && data.length == 0) {
+
+        if (data != null && data.length === 0) {
             history.push('/patient/add');
         }
         props.onSearch(data, submitValue)
+    }
+
+    const handleSearchBtnClick = (event) => {
+        event.preventDefault();
+        isMobile ? handleSearchBtnOnMobile() : handleSearchBtnOnDesktop();
     }
 
     let displayIcon;
@@ -58,14 +80,25 @@ const SearchBox = (props) => {
 
 
     return (<form className={classes["search-wrapper"]}>
-        <div className={classes["search-box"]}>
-            <div className={classes['search-area']}>
-                <input className={classes["search-text"]} type="text" value={searchInput} onChange={onChangeHandler} />
+        <BrowserView>
+            <div className={classes["search-box"]}>
+                <div className={classes['search-area']}>
+                    <input className={classes["search-text"]} type="text" value={searchInput} onChange={handleInputChange} />
+                    {displayIcon}
+                </div>
+                <Button className={classes["search-button"]} onClick={handleSearchBtnClick}>Tìm kiếm</Button>
+            </div>
+        </BrowserView>
+        <MobileView>
+            <div className={classes.instruction}>Để bắt đầu, vui lòng nhập thông tin bệnh nhân:</div>
+            <div className={classes["search-box"]}>
+                <input type="text" className={classes["search-text"]} value={searchInput} onChange={handleInputChange} />
                 {displayIcon}
             </div>
-            <Button className={classes["search-button"]} onClick={onSearchBtnClickHandler}>Tìm kiếm</Button>
-        </div>
+            <Button className={classes["search-button"]} onClick={handleSearchBtnClick} >Tìm kiếm</Button>
+        </MobileView>
     </form>)
 };
+
 
 export default SearchBox;

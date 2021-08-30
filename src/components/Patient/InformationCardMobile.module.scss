@@ -1,0 +1,48 @@
+.card {
+    display: flex;
+    background: #FFFFFF;
+    align-items: center;
+    justify-content: space-between;
+    height: 124px;
+
+    .information {
+        padding: 24px 28px;
+
+        .name {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        .year,
+        .identity {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    .entries {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        width: 68px;
+        border-radius: 5px;
+        background-color: #F2F2F2;
+        margin: 24px 28px;
+
+        >img {
+            width: 18px;
+            height: 18px;
+            margin-right: 4px;
+        }
+
+        >div {
+            margin-left: 4px;
+            color: #828282;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+}

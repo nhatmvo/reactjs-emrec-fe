@@ -60,6 +60,9 @@ const Input = forwardRef((props, ref) => {
                     InputProps={{
                         disableUnderline: true
                     }}
+                    invalidDateMessage=""
+                    maxDateMessage=""
+                    minDateMessage=""
                 />
             </MuiPickersUtilsProvider>
         </ThemeProvider>

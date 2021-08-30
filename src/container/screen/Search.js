@@ -15,10 +15,10 @@ const Search = () => {
     const hasSearchResult = searchResult != null;
 
     return (
-    <Fragment>
-        <SearchBox onSearch={onSearchHandler} />
-        {hasSearchResult && <SearchResults data={searchResult} searchKeyword={searchKeyWord}/>}
-    </Fragment>)
+        <Fragment>
+            <SearchBox onSearch={onSearchHandler} />
+            {hasSearchResult && <SearchResults data={searchResult} searchKeyword={searchKeyWord} />}
+        </Fragment>)
 
 }
 

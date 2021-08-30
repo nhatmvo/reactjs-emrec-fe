@@ -1,0 +1,67 @@
+.card {
+    height: 48px;
+    margin: 12px 0px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ECEAF8;
+    border-radius: 8px;
+
+
+    >div {
+        color: #331FBD;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        margin: 16px 12px;
+    }
+
+    >label {
+        margin: 16px 12px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    >input {
+        display: none;
+    }
+}
+
+.completed-card {
+    height: 48px;
+    margin: 12px 0px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F2F2F2;
+    border-radius: 8px;
+
+    >div {
+        color: #331FBD;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        margin: 16px 12px;
+    }
+
+    >label {
+        display: flex;
+        align-items: center;
+        margin: 16px 12px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        >img {
+            margin-right: 8px;
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    >input {
+        display: none;
+    }
+}
